@@ -1,0 +1,9 @@
+<settings>
+    <servers>
+        <server>
+            <id>nexus-prod</id>
+            <username>CI_prod</username>
+            <password>3141</password>
+        </server>
+    </servers>
+</settings>
