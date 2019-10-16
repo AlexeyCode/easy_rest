@@ -5,6 +5,7 @@
 
 <groupId>spring-api</groupId>
 <artifactId>easy-rest</artifactId>
+<version>${nexusProdDistribVersion}-${distribBuildNumber}</version>
 
 
 <parent>
@@ -18,7 +19,7 @@
         <nexusProdArtifactId>CI_prod_easy_rest</nexusProdArtifactId>
         <nexusProdGroupId>NEXUS_PROD</nexusProdGroupId>
         <nexusProdUrl>http://35.228.59.162:8081/repository/nexus_prod/</nexusProdUrl>
-        <nexusProdDisribVersion>D-01</nexusProdDisribVersion>
+        <nexusProdDistribVersion>D-01</nexusProdDistribVersion>
         <distribBuildNumber></distribBuildNumber>
     </properties>
 
@@ -58,25 +59,25 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-deploy-plugin</artifactId>
             <version>3.0.0-M1</version>
-            <executions>
-                <execution>
-                    <id>deployFile</id>
-                    <phase>deploy</phase>
-                    <goals>
-                        <goal>deploy-file</goal>
-                    </goals>
-                    <configuration>
-                        <artifactId>${nexusProdArtifactId}</artifactId>
-                        <groupId>${nexusProdGroupId}</groupId>
-                        <generatePom>true</generatePom>
-                        <version>${nexusProdDisribVersion}-${distribBuildNumber}</version>
+            <!--<executions>-->
+                <!--<execution>-->
+                    <!--<id>deployFile</id>-->
+                    <!--<phase>deploy</phase>-->
+                    <!--<goals>-->
+                        <!--<goal>deploy-file</goal>-->
+                    <!--</goals>-->
+                    <!--<configuration>-->
+                        <!--&lt;!&ndash;<artifactId>${nexusProdArtifactId}</artifactId>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<groupId>${nexusProdGroupId}</groupId>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<generatePom>true</generatePom>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<version>${nexusProdDistribVersion}-${distribBuildNumber}</version>&ndash;&gt;-->
 
-                        <url>${nexusProdUrl}</url>
-                        <repositoryId>nexus-prod</repositoryId>
-                        <packaging>jar</packaging>
-                    </configuration>
-                </execution>
-            </executions>
+                        <!--&lt;!&ndash;<url>${nexusProdUrl}</url>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<repositoryId>nexus-prod</repositoryId>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<packaging>jar</packaging>&ndash;&gt;-->
+                    <!--</configuration>-->
+                <!--</execution>-->
+            <!--</executions>-->
         </plugin>
     </plugins>
 </build>
